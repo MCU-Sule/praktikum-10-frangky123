@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="author" content="Frangky Hernandez 2172036">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    .kotak1{
+        text-indent: 10px;
+        border: 1px solid black;
+        background-color: coral;
+        width: 100%;
+        height: 30px;
+        font-size: 25px;
+    }
+    input[type=button]{
+        background-color:cyan;
+        width: 70px;
+        text-align: center;
+        display: inline-block;
+    }
+    #randomtambah{
+        background-color: lightgreen;
+        text-align: center;
+        height: 25px;
+        width: 100px;
+        margin-top: 10px;
+    }
+    #randomkurang{
+        background-color: lightgreen;
+        text-align: center;
+        height: 25px;
+        width: 100px;
+        margin-top: 10px;
+    }
+    #randomkali{
+        background-color: lightgreen;
+        text-align: center;
+        height: 25px;
+        width: 100px;
+        margin-top: 10px;
+    }
+    #urutbilangan{
+        background-color: lightgreen;
+        text-align: center;
+        height: 25px;
+        width: 100px;
+        margin-top: 10px;
+    }
+    .kotak2{
+        text-indent: 10px;
+        border: 1px solid black;
+        background-color: lightskyblue;
+        width: 100%;
+        height: 30px;
+        font-size: 25px;
+    }
+    .kotak3{
+        text-indent: 10px;
+        border: 1px solid black;
+        background-color: palevioletred;
+        width: 100%;
+        height: 30px;
+        font-size: 25px;
+    }
+    .kotak4{
+        text-indent: 10px;
+        border: 1px solid black;
+        background-color: orangered;
+        width: 100%;
+        height: 30px;
+        font-size: 25px;
+    }
+    .isitambah{
+        display: inline-block;
+    }
+    .isikali{
+        display: inline-block;
+    }
+    .isikurang{
+        display: inline-block;
+    }
+    .isibilangan{
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div class="kotak1"><b>Penjumlahan</div></b>
+    <br>
+    <input type="number" id="angka1">&nbsp;&nbsp; + &nbsp;&nbsp;
+    <input type="number" id="angka2">&nbsp;&nbsp; = &nbsp;&nbsp;
+    <input type="number" id="angka3">&nbsp;&nbsp;
+    <input type="button" value="Hasil" onclick="tampilkanHasilTambah()"><br>
+    <button id="randomtambah" onclick="randomTambah()">Random<br><br></button>
+    <div class="isitambah"></div><br><br>
+  
+    <div class="kotak2"><b>Pengurangan</div></b>
+    <br>
+    <input type="number" id="angka4">&nbsp;&nbsp; - &nbsp;&nbsp;
+    <input type="number" id="angka5">&nbsp;&nbsp; = &nbsp;&nbsp;
+    <input type="number" id="angka6">&nbsp;&nbsp;
+    <input type="button" value="Hasil" onclick="tampilkanHasilKurang()"><br>
+    <button id="randomkurang" onclick="randomKurang()">Random<br><br></button>
+    <div class="isikurang"></div><br><br>
+
+    <div class="kotak3"><b>Perkalian</div></b>
+    <br>
+    <input type="number" id="angka7">&nbsp;&nbsp; * &nbsp;&nbsp;
+    <input type="number" id="angka8">&nbsp;&nbsp; = &nbsp;&nbsp;
+    <input type="number" id="angka9">&nbsp;&nbsp;
+    <input type="button" value="Hasil" onclick="tampilkanHasilKali()"><br>
+    <button id="randomkali" onclick="randomKali()">Random<br><br></button>
+    <div class="isikali"></div><br><br>
+
+    <div class="kotak4"><b>Bilangan</div></b>
+    <br>
+    <input type="text" id="angka10">&nbsp;&nbsp; = &nbsp;&nbsp;
+    <input type="text" id="angka11">&nbsp;&nbsp;,
+    <input type="text" id="angka12">&nbsp;&nbsp;,
+    <input type="text" id="angka13">&nbsp;&nbsp;
+    <input type="button" value="Hasil" onclick="tampilkanHasilBilangan()"><br>
+    <button id="urutbilangan" onclick="randomBilangan()">Random<br><br></button>
+    <div class="isibilangan"></div><br><br>
+
+
+    <script>
+        function randomTambah(){
+            let bil1=Math.floor(Math.random()* (999 - 100 + 1)) + 100;
+            let bil2=Math.floor(Math.random()* (999 - 100 + 1)) + 100;
+            
+
+            document.getElementById("angka1").value = bil1;
+            document.getElementById("angka2").value = bil2;
+        }
+
+        function tampilkanHasilTambah(){
+            
+            
+            let angka1=document.getElementById("angka1").value;
+            let angka2=document.getElementById("angka2").value;
+            let angka3=document.getElementById("angka3").value;
+            let hasiltambah = parseInt(angka1) + parseInt(angka2);
+           
+            if(angka3 == hasiltambah){
+                document.querySelector(".isitambah").innerHTML="Jawaban Benar"
+            }
+            else{
+                document.querySelector(".isitambah").innerHTML="Jawaban Salah"
+            }
+        }  
+        
+        function randomKurang(){
+            let bil3=Math.floor(Math.random()* (999 - 100 + 1)) + 100;
+            let bil4=Math.floor(Math.random()* (999 - 100 + 1)) + 100;
+            
+
+            document.getElementById("angka4").value = bil3;
+            document.getElementById("angka5").value = bil4;
+        }
+
+        function tampilkanHasilKurang(){
+            let angka4=document.getElementById("angka4").value;
+            let angka5=document.getElementById("angka5").value;
+            let angka6=document.getElementById("angka6").value;
+
+           
+            if(angka6 == angka4-angka5){
+                document.querySelector(".isikurang").innerHTML="Jawaban Benar"
+            }
+            else{
+                document.querySelector(".isikurang").innerHTML="Jawaban Salah"
+            }
+        }
+
+        function randomKali(){
+            let bil5=Math.floor(Math.random()* (100 - 0 + 1)) + 0;
+            let bil6=Math.floor(Math.random()* (100 - 0 + 1)) + 0;
+            
+
+            document.getElementById("angka7").value = bil5;
+            document.getElementById("angka8").value = bil6;
+        }
+        function tampilkanHasilKali(){
+            let angka7=document.getElementById("angka7").value;
+            let angka8=document.getElementById("angka8").value;
+            let angka9=document.getElementById("angka9").value;
+
+           
+            if(angka9 == angka7*angka8){
+                document.querySelector(".isikali").innerHTML="Jawaban Benar"
+            }
+            else{
+                document.querySelector(".isikali").innerHTML="Jawaban Salah"
+            }
+        }
+        
+        function randomBilangan(){
+            let bil7=Math.floor(Math.random()* (999 - 100 + 1)) + 100;
+            document.getElementById("angka10").value = bil7;
+        }
+        function tampilkanHasilBilangan(){
+            let angka10=document.getElementById("angka10").value;
+            let angka11=document.getElementById("angka11").value;
+            let angka12=document.getElementById("angka12").value;
+            let angka13=document.getElementById("angka13").value;
+            
+           
+            if(angka10 == angka11 + angka12 + angka13 ){
+                document.querySelector(".isibilangan").innerHTML="Jawaban Benar"
+            }
+            else{
+                document.querySelector(".isibilangan").innerHTML="Jawaban Salah"
+            }
+        }
+    </script>
+</body>
+</html>
